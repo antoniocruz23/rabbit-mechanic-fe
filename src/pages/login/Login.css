@@ -1,0 +1,9 @@
+.login-container {
+  background-image: url("./img/login-background.jpeg");
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+}
