@@ -2,28 +2,38 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as AiIcons from "react-icons/ai";
 import * as HiIcons from "react-icons/hi";
-import { SidebarData } from "./SidebarData"
+import { SidebarData } from "./SidebarData";
 import "./Header.css";
+import AuthService from "../../services/auth";
 
-let iconSize = 30; 
+let iconSize = 30;
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
-
   const showSidebar = () => setSidebar(!sidebar);
+
+  const handleLogout = () => {
+    AuthService.logout();
+  };
 
   return (
     <>
       <header className="header-container">
         <div className="header-left">
-          <HiIcons.HiMenu id="menu-icon" size={iconSize} onClick={showSidebar}/>
+          <HiIcons.HiMenu
+            id="menu-icon"
+            size={iconSize}
+            onClick={showSidebar}
+          />
           <h1 id="title">Rabbit Mechanic</h1>
         </div>
 
         <div className="header-right">
           <nav className="nav">
             <Link to="/main">Profile</Link>
-            <Link to="/">Logout</Link>
+            <Link onClick={handleLogout} to="/">
+              Logout
+            </Link>
           </nav>
         </div>
       </header>
@@ -32,7 +42,7 @@ const Header = () => {
         <ul className="nav-menu-items" onClick={showSidebar}>
           <li className="navbar-toggle">
             <Link to="#" className="menu-bar">
-              <AiIcons.AiOutlineClose id="sidebar-icon" size={iconSize}/>
+              <AiIcons.AiOutlineClose id="sidebar-icon" size={iconSize} />
             </Link>
           </li>
           {SidebarData.map((item, index) => {
@@ -49,6 +59,6 @@ const Header = () => {
       </nav>
     </>
   );
-}
+};
 
 export default Header;
