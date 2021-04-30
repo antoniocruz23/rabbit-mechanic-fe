@@ -1,0 +1,15 @@
+.title-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 72px);
+}
+
+.home-title {
+  color: white;
+  text-align: center;
+  font-family: var(--font-montserrat);
+  font-size: 50px;
+  font-weight: 400;
+}

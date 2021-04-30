@@ -1,0 +1,47 @@
+.card-body {
+  position: relative;
+  display: flex;
+  height: calc(100% - 72px);
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+}
+
+.card-form {
+  display: block;
+  position: absolute;
+  flex-wrap: wrap;
+  background-color: var(--light-grey);
+}
+
+.card-title {
+  font-family: var(--font-roboto);
+  font-weight: 500;
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.card-row {
+  margin: 0 auto;
+}
+
+.card-column {
+  margin-bottom: 1em;
+}
+
+.form-label {
+  font-family: var(--font-roboto);
+}
+
+.form-control {
+  background-color: var(--soft-white);
+}
+
+.btn-primary {
+  background-color: var(--light-blue);
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-blue);
+}

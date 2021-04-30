@@ -30,7 +30,7 @@ const Form = () => {
     );
   };
 
-  if (redirect) return <Redirect to="/main" />;
+  if (redirect) return <Redirect to="/home" />;
 
   return (
     <form onSubmit={onSubmit}>

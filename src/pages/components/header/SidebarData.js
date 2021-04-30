@@ -6,26 +6,32 @@ import * as GiIcons from "react-icons/gi";
 
 export const SidebarData = [
     {
+        title: "Home",
+        path: "/home",
+        icon: <GiIcons.GiHomeGarage />,
+        cName: "nav-text"
+    },
+    {
         title: "Employees",
-        path: "/main",
+        path: "/employee",
         icon: <BsIcons.BsPersonLinesFill />,
         cName: "nav-text"
     },
     {
         title: "Customers",
-        path: "/main",
+        path: "/customer",
         icon: <IoIcons.IoMdPeople />,
         cName: "nav-text"
     },
     {
         title: "Vehicles",
-        path: "/main",
+        path: "/vehicle",
         icon: <BiIcons.BiCar />,
         cName: "nav-text"
     },
     {
         title: "Repairs",
-        path: "/main",
+        path: "/repair",
         icon: <GiIcons.GiAutoRepair />,
         cName: "nav-text"
     },

@@ -1,0 +1,58 @@
+.card-body {
+  position: relative;
+  display: flex;
+  height: calc(100% - 72px);
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+}
+
+.card-form {
+  display: block;
+  position: absolute;
+  flex-wrap: wrap;
+  background-color: var(--light-grey);
+}
+
+.card-title {
+  font-family: var(--font-roboto);
+  font-weight: 500;
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.text-container {
+  text-align: center;
+  font-family: var(--font-roboto);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin: 1.5em;
+}
+
+.btn-delete {
+  background-color: var(--light-blue);
+}
+
+.btn-delete:hover {
+  background-color: var(--dark-blue);
+}
+
+.btn-cancel {
+  background-color: var(--danger);
+}
+
+.btn-cancel:hover {
+  background-color: var(--dark-red);
+}
+
+.btn-delete,
+.btn-cancel,
+.btn-delete:hover,
+.btn-cancel:hover {
+  color: var(--white);
+}

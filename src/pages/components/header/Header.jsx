@@ -4,13 +4,28 @@ import * as AiIcons from "react-icons/ai";
 import * as HiIcons from "react-icons/hi";
 import { SidebarData } from "./SidebarData";
 import "./Header.css";
-import AuthService from "../../services/auth";
+import AuthService from "../../../services/auth";
 
 let iconSize = 30;
 
 const Header = () => {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
+
+  const dropdown = document.getElementsByClassName("dropdown-btn");
+
+  for (let i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+
+      if (dropdownContent.style.display === "flex") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "flex";
+      }
+    });
+  }
 
   const handleLogout = () => {
     AuthService.logout();
@@ -25,12 +40,13 @@ const Header = () => {
             size={iconSize}
             onClick={showSidebar}
           />
-          <h1 id="title">Rabbit Mechanic</h1>
+          <Link to="/home" id="title">
+            Rabbit Mechanic
+          </Link>
         </div>
 
         <div className="header-right">
           <nav className="nav">
-            <Link to="/main">Profile</Link>
             <Link onClick={handleLogout} to="/">
               Logout
             </Link>
