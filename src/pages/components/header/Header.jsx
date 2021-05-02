@@ -1,26 +1,57 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
+import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import * as HiIcons from "react-icons/hi";
 import { SidebarData } from "./SidebarData";
 import "./Header.css";
+import SubMenu from "./SubMenu";
 import AuthService from "../../../services/auth";
 
 let iconSize = 30;
 
-const Header = () => {
-  const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
+const NavIcon = styled(Link)`
+  margin-left: 2rem;
+  font-size: 2rem;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
 
+const SidebarNav = styled.nav`
+  background: var(--black);
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
+  transition: 350ms;
+  z-index: var(--index-sidebar);
+`;
+
+const SidebarWrap = styled.div`
+  width: 100%;
+`;
+
+const Header = () => {
   const handleLogout = () => {
     AuthService.logout();
   };
+
+  const [sidebar, setSidebar] = useState(false);
+  const [subMenu, setSubMenu] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
+  const showSubMenu = () => setSubMenu(!subMenu);
 
   return (
     <>
       <header className="header-container">
         <div className="header-left">
-          <HiIcons.HiMenu
+          <FaIcons.FaBars
             id="menu-icon"
             size={iconSize}
             onClick={showSidebar}
@@ -39,25 +70,16 @@ const Header = () => {
         </div>
       </header>
 
-      <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-        <ul className="nav-menu-items" onClick={showSidebar}>
-          <li className="navbar-toggle">
-            <Link to="#" className="menu-bar">
-              <AiIcons.AiOutlineClose id="sidebar-icon" size={iconSize} />
-            </Link>
-          </li>
+      <SidebarNav sidebar={sidebar}>
+        <SidebarWrap>
+          <NavIcon to="#">
+            <AiIcons.AiOutlineClose onClick={showSidebar} />
+          </NavIcon>
           {SidebarData.map((item, index) => {
-            return (
-              <li key={index} className={item.cName}>
-                <Link to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
-                </Link>
-              </li>
-            );
+            return <SubMenu item={item} key={index} />;
           })}
-        </ul>
-      </nav>
+        </SidebarWrap>
+      </SidebarNav>
     </>
   );
 };

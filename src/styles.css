@@ -3,20 +3,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
 
 :root {
-  --black: #202020;
+  --black: #15171c;
   --white: #ffffff;
   --soft-white: #f1f1f1;
   --dark-red: #ac3e31;
   --yellow: #dbae58;
-  --dark-grey: #484848;
+  --dark-grey: #252831;
   --light-grey: #dadada;
   --dark-blue: #20283e;
   --light-blue: #488a99;
+  --blue-btn: #007bff;
+
   --font-roboto: Roboto;
   --font-pricedown: Pricedown Bl;
   --font-montserrat: Montserrat;
+
   --index-sidebar: 3;
   --index-header: 2;
+
   --size-18: 18px;
 }
 
@@ -29,5 +33,5 @@ html,
 }
 
 body {
-  background: --var(--black);
+  background: var(--black);
 }
