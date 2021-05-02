@@ -4,6 +4,7 @@ import * as IoIcons from "react-icons/io";
 import * as BsIcons from "react-icons/bs";
 import * as GiIcons from "react-icons/gi";
 import * as RiIcons from "react-icons/ri";
+import * as MdIcons from "react-icons/md";
 
 export const SidebarData = [
     {
@@ -21,27 +22,27 @@ export const SidebarData = [
             {
               title: "Create",
               path: '/employee/create',
-              icon: <IoIcons.IoIosPaper />
+              icon: <IoIcons.IoMdCreate />
             },
             {
               title: 'Get All',
               path: '/employee/all',
-              icon: <IoIcons.IoIosPaper />
+              icon: <BiIcons.BiFileFind />
             },
             {
               title: "Get by Id",
               path: '/employee/:id',
-              icon: <IoIcons.IoIosPaper />
+              icon: <BiIcons.BiFileFind />
             },
             {
               title: "Update",
               path: '/employee/update',
-              icon: <IoIcons.IoIosPaper />
+              icon: <MdIcons.MdUpdate />
             },
             {
               title: 'Delete',
               path: '/employee/delete',
-              icon: <IoIcons.IoIosPaper />
+              icon: <MdIcons.MdDelete />
             }
         ]
     },
@@ -55,27 +56,27 @@ export const SidebarData = [
             {
               title: "Create",
               path: '/customer/create',
-              icon: <IoIcons.IoIosPaper />
+              icon: <IoIcons.IoMdCreate />
             },
             {
               title: 'Get All',
               path: '/customer/all',
-              icon: <IoIcons.IoIosPaper />
+              icon: <BiIcons.BiFileFind />
             },
             {
               title: "Get by Id",
               path: '/customer/:id',
-              icon: <IoIcons.IoIosPaper />
+              icon: <BiIcons.BiFileFind />
             },
             {
               title: "Update",
               path: '/customer/update',
-              icon: <IoIcons.IoIosPaper />
+              icon: <MdIcons.MdUpdate />
             },
             {
               title: 'Delete',
               path: '/customer/delete',
-              icon: <IoIcons.IoIosPaper />
+              icon: <MdIcons.MdDelete />
             }
         ]
     },
@@ -89,27 +90,27 @@ export const SidebarData = [
             {
               title: "Create",
               path: '/vehicle/create',
-              icon: <IoIcons.IoIosPaper />
+              icon: <IoIcons.IoMdCreate />
             },
             {
               title: 'Get All',
               path: '/vehicle/all',
-              icon: <IoIcons.IoIosPaper />
+              icon: <BiIcons.BiFileFind />
             },
             {
               title: "Get by Id",
               path: '/vehicle/:id',
-              icon: <IoIcons.IoIosPaper />
+              icon: <BiIcons.BiFileFind />
             },
             {
               title: "Update",
               path: '/vehicle/update',
-              icon: <IoIcons.IoIosPaper />
+              icon: <MdIcons.MdUpdate />
             },
             {
               title: 'Delete',
               path: '/vehicle/delete',
-              icon: <IoIcons.IoIosPaper />
+              icon: <MdIcons.MdDelete />
             }
         ]
     },
@@ -123,27 +124,27 @@ export const SidebarData = [
             {
               title: "Create",
               path: '/repair/create',
-              icon: <IoIcons.IoIosPaper />
+              icon: <IoIcons.IoMdCreate />
             },
             {
               title: 'Get All',
               path: '/repair/all',
-              icon: <IoIcons.IoIosPaper />
+              icon: <BiIcons.BiFileFind />
             },
             {
               title: "Get by Id",
               path: '/repair/:id',
-              icon: <IoIcons.IoIosPaper />
+              icon: <BiIcons.BiFileFind />
             },
             {
               title: "Update",
               path: '/repair/update',
-              icon: <IoIcons.IoIosPaper />
+              icon: <MdIcons.MdUpdate />
             },
             {
               title: 'Delete',
               path: '/repair/delete',
-              icon: <IoIcons.IoIosPaper />
+              icon: <MdIcons.MdDelete />
             }
         ]
     },
