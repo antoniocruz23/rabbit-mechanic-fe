@@ -3,9 +3,9 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import Login from "./pages/login/Login";
 import Home from "./pages/home/Home";
-import EmployeeCreate from "./pages/employee/pages/create/Create";
-import EmployeeUpdate from "./pages/employee/pages/update/Update";
-import EmployeeDelete from "./pages/employee/pages/delete/Delete";
+import EmployeeCreate from "./pages/employee/create/Create";
+import EmployeeUpdate from "./pages/employee/update/Update";
+import EmployeeDelete from "./pages/employee/delete/Delete";
 //import Customer from "./pages/customer/Customer";
 //import Vehicle from "./pages/vehicle/Vehicle";
 //import Repair from "./pages/repair/Repair";

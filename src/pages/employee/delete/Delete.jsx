@@ -1,4 +1,4 @@
-import Header from "../../../components/header/Header";
+import Header from "../../components/header/Header";
 import Card from "../delete/components/card/Card";
 
 const Update = () => {
