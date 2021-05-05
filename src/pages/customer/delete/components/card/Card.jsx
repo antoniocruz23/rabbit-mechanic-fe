@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import AuthService from "../../../../../services/auth";
+import { Link } from "react-router-dom";
 
 import "../../../../styles/DeleteCard.css";
 
@@ -10,7 +10,7 @@ const Card = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    AuthService.deleteEmployee(id).then(
+    AuthService.deleteCustomer(id).then(
       () => {
         console.log("NICE");
       },
@@ -30,10 +30,10 @@ const Card = () => {
     <>
       <div className="card-body" onSubmit={onSubmit}>
         <form class="card-form">
-          <h5 class="card-title">Delete Employee</h5>
+          <h5 class="card-title">Delete Customer</h5>
           <div className="text-container">
             <label class="warning-text">
-              Do you really want to delete "employee name"
+              Do you really want to delete "customer name"
             </label>
           </div>
 

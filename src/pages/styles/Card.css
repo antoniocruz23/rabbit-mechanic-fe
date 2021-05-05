@@ -12,6 +12,10 @@
   position: absolute;
   flex-wrap: wrap;
   background-color: var(--light-grey);
+  width: 450px;
+  margin: auto;
+  padding: 40px 55px 30px 55px;
+  border-radius: 15px;
 }
 
 .card-title {
@@ -44,4 +48,10 @@
 
 .btn-primary:hover {
   background-color: var(--dark-blue);
+}
+
+.button-container-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -8,11 +8,9 @@ const Form = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
-  const [message, setMessage] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setMessage("");
 
     AuthService.login(username, password).then(
       () => {
@@ -25,7 +23,7 @@ const Form = () => {
             error.response.data.message) ||
           error.message ||
           error.toString();
-        setMessage(errMessage);
+        console.log(errMessage);
       }
     );
   };
@@ -33,7 +31,7 @@ const Form = () => {
   if (redirect) return <Redirect to="/home" />;
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className="form-login" onSubmit={onSubmit}>
       <h3>Log in</h3>
 
       <div className="form-group">
@@ -59,7 +57,6 @@ const Form = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      {message && <span>{message}</span>}
       <button type="submit" className="btn btn-dark btn-lg btn-block">
         Sign in
       </button>

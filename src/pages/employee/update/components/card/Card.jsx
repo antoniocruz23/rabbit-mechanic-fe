@@ -1,9 +1,37 @@
-import "./Card.css";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import AuthService from "../../../../../services/auth";
+
+import "../../../../styles/Card.css";
 
 const Card = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [role, setRole] = useState("");
+  const { id } = useParams();
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    AuthService.updateEmployee(id, firstName, lastName, role).then(
+      () => {
+        console.log("NICE");
+      },
+      (error) => {
+        const errMessage =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString();
+        console.log(errMessage);
+      }
+    );
+  };
+
   return (
     <>
-      <div className="card-body">
+      <div className="card-body" onSubmit={onSubmit}>
         <form class="card-form">
           <h5 class="card-title">Update Employee Information</h5>
           <div className="card-row">
@@ -15,6 +43,8 @@ const Card = () => {
                   placeholder="Enter first name"
                   type="text"
                   class="form-control"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                 ></input>
               </div>
             </div>
@@ -26,6 +56,8 @@ const Card = () => {
                   placeholder="Enter last name"
                   type="text"
                   class="form-control"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 ></input>
               </div>
             </div>
@@ -38,6 +70,8 @@ const Card = () => {
                     placeholder="Enter role"
                     type="text"
                     class="form-control"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
                   ></input>
                 </div>
               </div>

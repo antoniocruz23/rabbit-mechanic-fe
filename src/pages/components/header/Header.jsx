@@ -42,10 +42,7 @@ const Header = () => {
   };
 
   const [sidebar, setSidebar] = useState(false);
-  const [subMenu, setSubMenu] = useState(false);
-
   const showSidebar = () => setSidebar(!sidebar);
-  const showSubMenu = () => setSubMenu(!subMenu);
 
   return (
     <>

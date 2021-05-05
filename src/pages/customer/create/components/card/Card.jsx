@@ -6,19 +6,19 @@ import "../../../../styles/Card.css";
 const Card = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [address, setAddress] = useState("");
+  const [email, setEmail] = useState("");
+  const [cellNumber, setCellNumber] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    AuthService.registerEmployee(
+    AuthService.registerCustomer(
       firstName,
       lastName,
-      username,
-      password,
-      role
+      address,
+      email,
+      cellNumber
     ).then(
       () => {},
       (error) => {
@@ -38,7 +38,7 @@ const Card = () => {
     <>
       <div className="card-body" onSubmit={onSubmit}>
         <form class="card-form">
-          <h5 class="card-title">Employee Information</h5>
+          <h5 class="card-title">Customer Information</h5>
           <div className="card-row">
             <div className="card-column">
               <div id="firstName">
@@ -68,43 +68,43 @@ const Card = () => {
             </div>
             <div className="align-items-center card-row">
               <div className="card-column">
-                <div id="username">
-                  <label class="form-label">Username</label>
+                <div id="address">
+                  <label class="form-label">Address</label>
                   <input
                     required
-                    placeholder="Enter username"
+                    placeholder="Enter address"
                     type="text"
                     class="form-control"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
                   ></input>
                 </div>
               </div>
               <div className="card-column">
-                <div id="password">
-                  <label class="form-label">Password</label>
+                <div id="email">
+                  <label class="form-label">Email</label>
                   <input
                     required
-                    placeholder="Enter password"
-                    type="password"
+                    placeholder="Enter email"
+                    type="email"
                     class="form-control"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   ></input>
                 </div>
               </div>
             </div>
             <div className="card-row">
               <div className="card-column">
-                <div id="role">
-                  <label class="form-label">Role</label>
+                <div id="cellNumber">
+                  <label class="form-label">Cell Number</label>
                   <input
                     required
-                    placeholder="Enter role"
+                    placeholder="Enter Cell Number"
                     type="text"
                     class="form-control"
-                    value={role}
-                    onChange={(e) => setRole(e.target.value)}
+                    value={cellNumber}
+                    onChange={(e) => setCellNumber(e.target.value)}
                   ></input>
                 </div>
               </div>

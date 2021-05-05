@@ -1,12 +1,12 @@
-form {
+.form-login {
   width: 450px;
   margin: auto;
-  background: #ffffff;
+  background: var(--white);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
 }
 
-form h3 {
+.form-login h3 {
   text-align: center;
   margin: 0;
   line-height: 1;
