@@ -1,26 +1,26 @@
 import { useState } from "react";
-import AuthService from "../../../../../services/Customer";
+import AuthService from "../../../../../services/Vehicle";
 
 import "../../../../styles/Card.css";
 
 const Card = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [address, setAddress] = useState("");
-  const [email, setEmail] = useState("");
-  const [cellNumber, setCellNumber] = useState("");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [price, setPrice] = useState("");
   const [id, setId] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    AuthService.updateCustomer(
+    AuthService.updateVehicle(
       id,
-      firstName,
-      lastName,
-      address,
-      email,
-      cellNumber
+      name,
+      description,
+      startDate,
+      endDate,
+      price
     ).then(
       () => {
         console.log("NICE");
@@ -41,14 +41,14 @@ const Card = () => {
     <>
       <div className="card-body" onSubmit={onSubmit}>
         <form class="card-form">
-          <h5 class="card-title">Update Customer Information</h5>
+          <h5 class="card-title">Update Repair Information</h5>
           <div className="card-row">
             <div className="card-column">
               <div id="id">
                 <label class="form-label">Id</label>
                 <input
-                  required
-                  placeholder="Enter customer id to update"
+                  required=""
+                  placeholder="Enter repair id to update"
                   type="text"
                   class="form-control"
                   value={id}
@@ -57,68 +57,68 @@ const Card = () => {
               </div>
             </div>
             <div className="card-column">
-              <div id="firstName">
-                <label class="form-label">First Name</label>
+              <div id="name">
+                <label class="form-label">Name</label>
                 <input
-                  required
-                  placeholder="Enter first name"
+                  required=""
+                  placeholder="Enter name"
                   type="text"
                   class="form-control"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 ></input>
               </div>
             </div>
             <div className="card-column">
-              <div id="lastName">
-                <label class="form-label">Last Name</label>
+              <div id="description">
+                <label class="form-label">Description</label>
                 <input
-                  required
-                  placeholder="Enter last name"
+                  required=""
+                  placeholder="Enter description"
                   type="text"
                   class="form-control"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 ></input>
               </div>
             </div>
             <div className="card-row">
               <div className="card-column">
-                <div id="address">
-                  <label class="form-label">Address</label>
+                <div id="startDate">
+                  <label class="form-label">Start Date</label>
                   <input
-                    required
-                    placeholder="Enter Address"
-                    type="text"
+                    required=""
+                    placeholder="Enter start date"
+                    type="date"
                     class="form-control"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
+                    value={startDate}
+                    onChange={(e) => setStartDate(e.target.value)}
                   ></input>
                 </div>
               </div>
               <div className="card-column">
-                <div id="email">
-                  <label class="form-label">Email</label>
+                <div id="endDate">
+                  <label class="form-label">End Date</label>
                   <input
-                    required
-                    placeholder="Enter Email"
-                    type="email"
+                    required=""
+                    placeholder="Enter end date"
+                    type="date"
                     class="form-control"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={endDate}
+                    onChange={(e) => setEndDate(e.target.value)}
                   ></input>
                 </div>
               </div>
               <div className="card-column">
-                <div id="cellNumber">
-                  <label class="form-label">Cell Number</label>
+                <div id="price">
+                  <label class="form-label">Price</label>
                   <input
-                    required
-                    placeholder="Enter Cell Number"
+                    required=""
+                    placeholder="Enter price"
                     type="text"
                     class="form-control"
-                    value={cellNumber}
-                    onChange={(e) => setCellNumber(e.target.value)}
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
                   ></input>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AuthService from "../../../../../services/auth";
+import AuthService from "../../../../../services/Employee";
 
 import "../../../../styles/Card.css";
 

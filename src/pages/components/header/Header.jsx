@@ -6,7 +6,7 @@ import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
 import "./Header.css";
 import SubMenu from "./SubMenu";
-import AuthService from "../../../services/auth";
+import AuthService from "../../../services/Auth";
 
 let iconSize = 30;
 

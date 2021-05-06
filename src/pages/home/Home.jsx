@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <Header />
       <div className="title-container">
-        <h1 className="home-title">Welcome "user"</h1>
+        <h1 className="home-title">Welcome "user" </h1>
       </div>
     </>
   );

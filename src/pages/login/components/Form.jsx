@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
-import AuthService from "../../../services/auth";
+import AuthService from "../../../services/Auth";
 
 import "./Form.css";
 

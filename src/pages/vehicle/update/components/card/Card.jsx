@@ -1,18 +1,18 @@
 import { useState } from "react";
-import AuthService from "../../../../../services/Employee";
+import AuthService from "../../../../../services/Vehicle";
 
 import "../../../../styles/Card.css";
 
 const Card = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [role, setRole] = useState("");
+  const [brand, setBrand] = useState("");
+  const [engineType, setEngineType] = useState("");
+  const [plate, setPlate] = useState("");
   const [id, setId] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    AuthService.updateEmployee(id, firstName, lastName, role).then(
+    AuthService.updateVehicle(id, brand, engineType, plate).then(
       () => {
         console.log("NICE");
       },
@@ -32,14 +32,14 @@ const Card = () => {
     <>
       <div className="card-body" onSubmit={onSubmit}>
         <form class="card-form">
-          <h5 class="card-title">Update Employee Information</h5>
+          <h5 class="card-title">Update Vehicle Information</h5>
           <div className="card-row">
             <div className="card-column">
               <div id="id">
                 <label class="form-label">Id</label>
                 <input
                   required=""
-                  placeholder="Enter employeed id to update"
+                  placeholder="Enter vehicle id to update"
                   type="text"
                   class="form-control"
                   value={id}
@@ -48,42 +48,42 @@ const Card = () => {
               </div>
             </div>
             <div className="card-column">
-              <div id="firstName">
-                <label class="form-label">First Name</label>
+              <div id="brand">
+                <label class="form-label">Brand</label>
                 <input
                   required=""
-                  placeholder="Enter first name"
+                  placeholder="Enter brand"
                   type="text"
                   class="form-control"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={brand}
+                  onChange={(e) => setBrand(e.target.value)}
                 ></input>
               </div>
             </div>
             <div className="card-column">
-              <div id="lastName">
-                <label class="form-label">Last Name</label>
+              <div id="engineType">
+                <label class="form-label">Engine Type</label>
                 <input
                   required=""
-                  placeholder="Enter last name"
+                  placeholder="Enter engine type"
                   type="text"
                   class="form-control"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  value={engineType}
+                  onChange={(e) => setEngineType(e.target.value)}
                 ></input>
               </div>
             </div>
             <div className="card-row">
               <div className="card-column">
-                <div id="role">
-                  <label class="form-label">Role</label>
+                <div id="plate">
+                  <label class="form-label">Plate</label>
                   <input
                     required=""
-                    placeholder="Enter role"
+                    placeholder="Enter plate"
                     type="text"
                     class="form-control"
-                    value={role}
-                    onChange={(e) => setRole(e.target.value)}
+                    value={plate}
+                    onChange={(e) => setPlate(e.target.value)}
                   ></input>
                 </div>
               </div>

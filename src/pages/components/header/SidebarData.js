@@ -26,12 +26,12 @@ export const SidebarData = [
             },
             {
               title: 'Get All',
-              path: '/employee/all',
+              path: '/employee/get-all',
               icon: <BiIcons.BiFileFind />
             },
             {
               title: "Get by Id",
-              path: '/employee/:id',
+              path: '/employee/get',
               icon: <BiIcons.BiFileFind />
             },
             {
@@ -60,12 +60,12 @@ export const SidebarData = [
             },
             {
               title: 'Get All',
-              path: '/customer/all',
+              path: '/customer/get-all',
               icon: <BiIcons.BiFileFind />
             },
             {
               title: "Get by Id",
-              path: '/customer/:id',
+              path: '/customer/get',
               icon: <BiIcons.BiFileFind />
             },
             {
@@ -94,12 +94,12 @@ export const SidebarData = [
             },
             {
               title: 'Get All',
-              path: '/vehicle/all',
+              path: '/vehicle/get-all',
               icon: <BiIcons.BiFileFind />
             },
             {
               title: "Get by Id",
-              path: '/vehicle/:id',
+              path: '/vehicle/get',
               icon: <BiIcons.BiFileFind />
             },
             {
@@ -128,12 +128,17 @@ export const SidebarData = [
             },
             {
               title: 'Get All',
-              path: '/repair/all',
+              path: '/repair/get-all',
+              icon: <BiIcons.BiFileFind />
+            },
+            {
+              title: 'Get All Active',
+              path: '/repair/get-active',
               icon: <BiIcons.BiFileFind />
             },
             {
               title: "Get by Id",
-              path: '/repair/:id',
+              path: '/repair/get',
               icon: <BiIcons.BiFileFind />
             },
             {

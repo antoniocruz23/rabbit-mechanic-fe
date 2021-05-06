@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import AuthService from "../../../../../services/auth";
+import AuthService from "../../../../../services/Employee";
 
 import "../../../../styles/DeleteCard.css";
 
