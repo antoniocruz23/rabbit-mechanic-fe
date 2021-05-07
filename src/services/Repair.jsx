@@ -34,6 +34,9 @@ const createRepair = (
       } else {
         alert(response.message);
       }
+    })
+    .catch((response) => {
+      alert(response);
     });
 };
 
@@ -53,6 +56,9 @@ const deleteRepair = (id) => {
       } else {
         alert(response.message);
       }
+    })
+    .catch((response) => {
+      alert(response);
     });
 };
 
@@ -87,6 +93,9 @@ const updateRepair = (
       } else {
         alert(response.message);
       }
+    })
+    .catch((response) => {
+      alert(response);
     });
 };
 

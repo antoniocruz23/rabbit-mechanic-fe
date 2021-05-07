@@ -14,10 +14,18 @@ export default function Table() {
           Authorization: "Bearer " + cookie.load("auth_by_cookie"),
         },
       })
-        .then((response) => response.json())
         .then((response) => {
-          console.log(response);
-          setCustomersList(response.results);
+          return response.json();
+        })
+        .then((response) => {
+          if (response.results) {
+            setCustomersList(response.results);
+          } else {
+            alert(response.message);
+          }
+        })
+        .catch((response) => {
+          alert(response);
         });
     }
     fetchData();

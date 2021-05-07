@@ -1,29 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../../../../../services/Repair";
 
 import "../../../../styles/DeleteCard.css";
 
 const Card = () => {
-  const { id } = useParams();
+  const [id, setId] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    AuthService.deleteRepair(id).then(
-      () => {
-        console.log("NICE");
-      },
-      (error) => {
-        const errMessage =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
-        console.log(errMessage);
-      }
-    );
+    AuthService.deleteRepair(id);
   };
 
   return (
@@ -32,11 +19,16 @@ const Card = () => {
         <form class="card-form">
           <h5 class="card-title">Delete Repair</h5>
           <div className="text-container">
-            <label class="warning-text">
-              Do you really want to delete "repair id"
-            </label>
+            <label class="warning-text">Do you really want to delete?</label>
           </div>
-
+          <input
+            required
+            placeholder="Enter repair id"
+            type="text"
+            class="input-delete"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+          ></input>
           <div className="button-container">
             <button type="submit" class="btn btn-delete">
               Delete

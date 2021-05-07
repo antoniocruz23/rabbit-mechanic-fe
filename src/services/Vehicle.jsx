@@ -20,6 +20,9 @@ const createVehicle = (userId, brand, engineType, plate) => {
       } else {
         alert(response.message);
       }
+    })
+    .catch((response) => {
+      alert(response);
     });
 };
 
@@ -34,11 +37,14 @@ const deleteVehicle = (id) => {
       return response.json();
     })
     .then((response) => {
-      if (response.repairId) {
+      if (response.carId) {
         alert("Deleted Successfully");
       } else {
         alert(response.message);
       }
+    })
+    .catch((response) => {
+      alert(response);
     });
 };
 
@@ -55,11 +61,14 @@ const updateVehicle = (id, brand, engineType, plate) => {
       return response.json();
     })
     .then((response) => {
-      if (response.repairId) {
+      if (response.carId) {
         alert("Updated Successfully");
       } else {
         alert(response.message);
       }
+    })
+    .catch((response) => {
+      alert(response);
     });
 };
 

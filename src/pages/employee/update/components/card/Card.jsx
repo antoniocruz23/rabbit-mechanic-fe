@@ -12,20 +12,7 @@ const Card = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    AuthService.updateEmployee(id, firstName, lastName, role).then(
-      () => {
-        console.log("NICE");
-      },
-      (error) => {
-        const errMessage =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
-        console.log(errMessage);
-      }
-    );
+    AuthService.updateEmployee(id, firstName, lastName, role);
   };
 
   return (

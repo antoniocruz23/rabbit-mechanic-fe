@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import cookie from "react-cookies";
 
 import "../../../styles/Table.css";
 
 export default function Table() {
   const [user, setUser] = useState({});
-  const { id } = useParams();
+  const [id, setId] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -16,10 +15,18 @@ export default function Table() {
           Authorization: "Bearer " + cookie.load("auth_by_cookie"),
         },
       })
-        .then((response) => response.json())
         .then((response) => {
-          console.log(response);
-          setUser(response);
+          return response.json();
+        })
+        .then((response) => {
+          if (response) {
+            setUser(response);
+          } else {
+            alert(response.message);
+          }
+        })
+        .catch((response) => {
+          alert(response);
         });
     }
     fetchData();
@@ -41,7 +48,16 @@ export default function Table() {
               <th id="id-header">Price </th>
             </tr>
             <tr className="table-body" key={user.repairId}>
-              <td id="id-body"> {user.repairId} </td>
+              <td id="id-body">
+                {" "}
+                <input
+                  required
+                  type="text"
+                  class="id-input"
+                  value={id}
+                  onChange={(e) => setId(e.target.value)}
+                ></input>{" "}
+              </td>
               <td id="id-body"> {user.carId} </td>
               <td> {user.repairName} </td>
               <td> {user.repairDescription} </td>

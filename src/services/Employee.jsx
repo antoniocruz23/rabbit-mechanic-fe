@@ -20,6 +20,9 @@ const registerEmployee = (firstName, lastName, username, password, role) => {
       } else {
         alert(response.message);
       }
+    })
+    .catch((response) => {
+      alert(response);
     });
 };
 
@@ -33,14 +36,17 @@ const updateEmployee = (id, firstName, lastName, role) => {
     body: JSON.stringify({ firstName, lastName, role }),
   })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
+      return response.json();
+    })
+    .then((response) => {
+      if (response.employeeId) {
+        alert("Updated Successfully");
       } else {
-        throw new Error("Something went wrong on api server!");
+        alert(response.message);
       }
     })
-    .catch((error) => {
-      console.error(error);
+    .catch((response) => {
+      alert(response);
     });
 };
 
@@ -51,15 +57,11 @@ const deleteEmployee = (id) => {
       Authorization: "Bearer " + cookie.load("auth_by_cookie"),
     },
   })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Something went wrong on api server!");
-      }
+    .then(() => {
+      alert("Deleted Successfully");
     })
-    .catch((error) => {
-      console.error(error);
+    .catch((response) => {
+      alert(response);
     });
 };
 

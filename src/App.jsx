@@ -3,8 +3,6 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import Login from "./pages/login/Login";
 import Home from "./pages/home/Home";
-import AuthService from "./services/Auth";
-import GuardedRoute from "./services/Auth";
 
 import EmployeeCreate from "./pages/employee/create/Create";
 import EmployeeUpdate from "./pages/employee/update/Update";
@@ -42,28 +40,28 @@ function App() {
 
         <Route path="/employee/create" component={EmployeeCreate} />
         <Route path="/employee/update" component={EmployeeUpdate} />
-        <Route path="/employee/delete/:id" component={EmployeeDelete} />
+        <Route path="/employee/delete" component={EmployeeDelete} />
         <Route path="/employee/get-all" component={EmployeeGetAll} />
-        <Route path="/employee/get/:id" component={EmployeeGetById} />
+        <Route path="/employee/get" component={EmployeeGetById} />
 
-        <Route path="/customer/create/" component={CustomerCreate} />
+        <Route path="/customer/create" component={CustomerCreate} />
         <Route path="/customer/update" component={CustomerUpdate} />
-        <Route path="/customer/delete/:id" component={CustomerDelete} />
+        <Route path="/customer/delete" component={CustomerDelete} />
         <Route path="/customer/get-all" component={CustomerGetAll} />
-        <Route path="/customer/get/:id" component={CustomerGetById} />
+        <Route path="/customer/get" component={CustomerGetById} />
 
         <Route path="/vehicle/create" component={VehicleCreate} />
         <Route path="/vehicle/get-all" component={VehicleGetAll} />
-        <Route path="/vehicle/delete/:id" component={VehicleDelete} />
+        <Route path="/vehicle/delete" component={VehicleDelete} />
         <Route path="/vehicle/update" component={VehicleUpdate} />
-        <Route path="/vehicle/get/:id" component={VehicleGetById} />
+        <Route path="/vehicle/get" component={VehicleGetById} />
 
         <Route path="/repair/create" component={RepairCreate} />
         <Route path="/repair/get-all" component={RepairGetAll} />
-        <Route path="/repair/get/:id" component={RepairGetById} />
+        <Route path="/repair/get" component={RepairGetById} />
         <Route path="/repair/get-active" component={RepairGetAllActive} />
         <Route path="/repair/update" component={RepairUpdate} />
-        <Route path="/repair/delete/:id" component={RepairDelete} />
+        <Route path="/repair/delete" component={RepairDelete} />
       </Switch>
     </Router>
   );

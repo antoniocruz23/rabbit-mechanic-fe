@@ -19,18 +19,6 @@ const Card = () => {
       address,
       email,
       cellNumber
-    ).then(
-      () => {},
-      (error) => {
-        const errMessage =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
-
-        console.log(errMessage);
-      }
     );
   };
 

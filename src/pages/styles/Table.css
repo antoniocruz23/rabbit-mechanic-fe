@@ -58,3 +58,10 @@
 #table-results tr:nth-child(even) {
   background-color: var(--dark-grey);
 }
+
+.id-input {
+  width: 40px;
+  text-align: center;
+  background-color: var(--light-grey);
+  border: none;
+}

@@ -20,6 +20,9 @@ const registerCustomer = (firstName, lastName, address, email, cellNumber) => {
       } else {
         alert(response.message);
       }
+    })
+    .catch((response) => {
+      alert(response);
     });
 };
 
@@ -50,11 +53,14 @@ const updateCustomer = (
       return response.json();
     })
     .then((response) => {
-      if (response.repairId) {
+      if (response.customerId) {
         alert("Updated Successfully");
       } else {
         alert(response.message);
       }
+    })
+    .catch((response) => {
+      alert(response);
     });
 };
 
@@ -65,15 +71,11 @@ const deleteCustomer = (id) => {
       Authorization: "Bearer " + cookie.load("auth_by_cookie"),
     },
   })
-    .then((response) => {
-      return response.json();
+    .then(() => {
+      alert("Deleted Successfully");
     })
-    .then((response) => {
-      if (response.repairId) {
-        alert("Deleted Successfully");
-      } else {
-        alert(response.message);
-      }
+    .catch((response) => {
+      alert(response);
     });
 };
 
