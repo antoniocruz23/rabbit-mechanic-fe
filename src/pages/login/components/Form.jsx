@@ -12,20 +12,11 @@ const Form = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    AuthService.login(username, password).then(
-      () => {
+    AuthService.login(username, password).then(() => {
+      if (AuthService.loggedIn() === true) {
         setRedirect(true);
-      },
-      (error) => {
-        const errMessage =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
-        console.log(errMessage);
       }
-    );
+    });
   };
 
   if (redirect) return <Redirect to="/home" />;

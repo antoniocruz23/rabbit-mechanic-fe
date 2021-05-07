@@ -25,9 +25,15 @@ const createRepair = (
       price,
     }),
   })
-    .then((response) => response.json())
     .then((response) => {
-      console.log(response);
+      return response.json();
+    })
+    .then((response) => {
+      if (response.repairId) {
+        alert("Created Successfully");
+      } else {
+        alert(response.message);
+      }
     });
 };
 
@@ -39,14 +45,14 @@ const deleteRepair = (id) => {
     },
   })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Something went wrong on api server!");
-      }
+      return response.json();
     })
-    .catch((error) => {
-      console.error(error);
+    .then((response) => {
+      if (response.repairId) {
+        alert("Deleted Successfully");
+      } else {
+        alert(response.message);
+      }
     });
 };
 
@@ -73,14 +79,14 @@ const updateRepair = (
     }),
   })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Something went wrong on api server!");
-      }
+      return response.json();
     })
-    .catch((error) => {
-      console.error(error);
+    .then((response) => {
+      if (response.repairId) {
+        alert("Updated Successfully");
+      } else {
+        alert(response.message);
+      }
     });
 };
 

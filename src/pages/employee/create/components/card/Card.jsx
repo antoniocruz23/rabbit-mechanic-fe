@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AuthService from "../../../../../services/Employee";
+import { Redirect } from "react-router-dom";
 
 import "../../../../styles/Card.css";
 
@@ -9,30 +10,15 @@ const Card = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    AuthService.registerEmployee(
-      firstName,
-      lastName,
-      username,
-      password,
-      role
-    ).then(
-      () => {},
-      (error) => {
-        const errMessage =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
-
-        console.log(errMessage);
-      }
-    );
+    AuthService.registerEmployee(firstName, lastName, username, password, role);
   };
+
+  if (redirect) return <Redirect to="/home" />;
 
   return (
     <>

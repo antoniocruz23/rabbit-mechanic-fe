@@ -12,14 +12,14 @@ const registerCustomer = (firstName, lastName, address, email, cellNumber) => {
     body: JSON.stringify({ firstName, lastName, address, email, cellNumber }),
   })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Something went wrong on api server!");
-      }
+      return response.json();
     })
-    .catch((error) => {
-      console.error(error);
+    .then((response) => {
+      if (response.customerId) {
+        alert("Created Successfully");
+      } else {
+        alert(response.message);
+      }
     });
 };
 
@@ -47,14 +47,14 @@ const updateCustomer = (
     }),
   })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Something went wrong on api server!");
-      }
+      return response.json();
     })
-    .catch((error) => {
-      console.error(error);
+    .then((response) => {
+      if (response.repairId) {
+        alert("Updated Successfully");
+      } else {
+        alert(response.message);
+      }
     });
 };
 
@@ -66,14 +66,14 @@ const deleteCustomer = (id) => {
     },
   })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Something went wrong on api server!");
-      }
+      return response.json();
     })
-    .catch((error) => {
-      console.error(error);
+    .then((response) => {
+      if (response.repairId) {
+        alert("Deleted Successfully");
+      } else {
+        alert(response.message);
+      }
     });
 };
 

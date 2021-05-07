@@ -11,9 +11,15 @@ const registerEmployee = (firstName, lastName, username, password, role) => {
     },
     body: JSON.stringify({ firstName, lastName, username, password, role }),
   })
-    .then((response) => response.json())
     .then((response) => {
-      console.log(response);
+      return response.json();
+    })
+    .then((response) => {
+      if (response.employeeId) {
+        alert("Created Successfully");
+      } else {
+        alert(response.message);
+      }
     });
 };
 

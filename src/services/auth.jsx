@@ -11,26 +11,36 @@ const login = (username, password) => {
     body: JSON.stringify({ username, password }),
   })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Something went wrong on api server!");
-      }
+      return response.json();
     })
     .then((response) => {
-      cookie.save("auth_by_cookie", response.token);
-    })
-    .catch((error) => {
-      console.error(error);
+      if (response.token) {
+        cookie.save("auth_by_cookie", response.token);
+        cookie.save("current_user", response.principal);
+      } else {
+        alert(response.message);
+      }
     });
 };
 
 const logout = () => {
   cookie.remove("auth_by_cookie");
+  cookie.remove("current_user");
+};
+
+const loggedIn = () => {
+  return true;
+};
+
+const currentUserName = () => {
+  const info = cookie.load("current_user");
+  return info.firstName;
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   login,
+  loggedIn,
   logout,
+  currentUserName,
 };

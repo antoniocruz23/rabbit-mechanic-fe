@@ -11,9 +11,15 @@ const createVehicle = (userId, brand, engineType, plate) => {
     },
     body: JSON.stringify({ userId, brand, engineType, plate }),
   })
-    .then((response) => response.json())
     .then((response) => {
-      console.log(response);
+      return response.json();
+    })
+    .then((response) => {
+      if (response.carId) {
+        alert("Created Successfully");
+      } else {
+        alert(response.message);
+      }
     });
 };
 
@@ -25,14 +31,14 @@ const deleteVehicle = (id) => {
     },
   })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Something went wrong on api server!");
-      }
+      return response.json();
     })
-    .catch((error) => {
-      console.error(error);
+    .then((response) => {
+      if (response.repairId) {
+        alert("Deleted Successfully");
+      } else {
+        alert(response.message);
+      }
     });
 };
 
@@ -46,14 +52,14 @@ const updateVehicle = (id, brand, engineType, plate) => {
     body: JSON.stringify({ brand, engineType, plate }),
   })
     .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Something went wrong on api server!");
-      }
+      return response.json();
     })
-    .catch((error) => {
-      console.error(error);
+    .then((response) => {
+      if (response.repairId) {
+        alert("Updated Successfully");
+      } else {
+        alert(response.message);
+      }
     });
 };
 

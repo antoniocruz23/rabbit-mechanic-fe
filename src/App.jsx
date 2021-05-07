@@ -3,6 +3,8 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import Login from "./pages/login/Login";
 import Home from "./pages/home/Home";
+import AuthService from "./services/Auth";
+import GuardedRoute from "./services/Auth";
 
 import EmployeeCreate from "./pages/employee/create/Create";
 import EmployeeUpdate from "./pages/employee/update/Update";
@@ -24,7 +26,7 @@ import VehicleGetById from "./pages/vehicle/getById/GetById";
 
 import RepairCreate from "./pages/repair/create/Create";
 import RepairUpdate from "./pages/repair/update/Update";
-//import RepairDelete from "./pages/repair/delete/Delete";
+import RepairDelete from "./pages/repair/delete/Delete";
 import RepairGetAll from "./pages/repair/getAll/GetAll";
 import RepairGetById from "./pages/repair/getById/GetById";
 import RepairGetAllActive from "./pages/repair/getActive/GetActive";
@@ -33,6 +35,8 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path={"/login"} exact component={Login} />
+
         <Route path={["/", "/login"]} exact component={Login} />
         <Route path="/home" component={Home} />
 
@@ -59,6 +63,7 @@ function App() {
         <Route path="/repair/get/:id" component={RepairGetById} />
         <Route path="/repair/get-active" component={RepairGetAllActive} />
         <Route path="/repair/update" component={RepairUpdate} />
+        <Route path="/repair/delete/:id" component={RepairDelete} />
       </Switch>
     </Router>
   );
