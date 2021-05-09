@@ -22,7 +22,6 @@ export default function Table() {
           if (response) {
             setUser(response);
           } else {
-            alert(response.message);
           }
         })
         .catch((response) => {
